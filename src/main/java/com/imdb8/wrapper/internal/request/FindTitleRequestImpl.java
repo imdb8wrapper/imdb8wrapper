@@ -3,7 +3,6 @@ package com.imdb8.wrapper.internal.request;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.imdb8.wrapper.api.model.Title;
 import com.imdb8.wrapper.api.model.request.FindTitleRequest;
 import com.imdb8.wrapper.internal.client.ImdbApiClient;
