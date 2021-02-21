@@ -32,7 +32,16 @@ public class OverviewDetails {
 
   @JsonProperty("ratings")
   public void setRatingAndRatingCount(Map<String, Object> ratings) {
-    this.rating = (double) ratings.get("rating");
+    Object object = ratings.get("rating");
+
+    if (object instanceof Integer) {
+      this.rating = (int) object;
+    }
+
+    if (object instanceof Double) {
+      this.rating = (double) object;
+    }
+
     this.ratingCount = (int) ratings.get("ratingCount");
   }
 

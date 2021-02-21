@@ -1,40 +1,35 @@
 package com.imdb8.wrapper.internal.request;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.imdb8.wrapper.api.model.OverviewDetails;
 import com.imdb8.wrapper.api.model.request.GetOverviewDetailsRequest;
 import com.imdb8.wrapper.internal.client.ImdbApiClient;
 import com.imdb8.wrapper.internal.client.ImdbApiRequestData;
-import com.imdb8.wrapper.api.model.OverviewDetails;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
 
+import static com.imdb8.wrapper.internal.ApiConstants.GET_OVERVIEW_DETAILS;
+import static com.imdb8.wrapper.internal.ApiConstants.TT_CONST_PARAM_NAME;
+
 @Slf4j
-public class GetOverviewDetailsRequestImpl implements GetOverviewDetailsRequest {
-  private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
-
-  private static final String GET_OVERVIEW_DETAILS_ENDPOINT = "/title/get-overview-details";
-  private static final String TCONST_PARAM_NAME = "tconst";
-
-  private final ImdbApiClient imdbApiClient;
-
+public class GetOverviewDetailsRequestImpl extends AbstractRequest implements GetOverviewDetailsRequest {
   public GetOverviewDetailsRequestImpl(ImdbApiClient imdbApiClient) {
-    this.imdbApiClient = imdbApiClient;
+    super(imdbApiClient);
   }
 
-  public OverviewDetails execute(String tconst) {
+  public OverviewDetails execute(String ttConst) {
     ImdbApiRequestData imdbApiRequestData = ImdbApiRequestData.builder()
-        .path(GET_OVERVIEW_DETAILS_ENDPOINT)
-        .addQueryParameter(TCONST_PARAM_NAME, tconst)
+        .path(GET_OVERVIEW_DETAILS)
+        .addQueryParameter(TT_CONST_PARAM_NAME, ttConst)
         .build();
 
     try {
       String response = imdbApiClient.get(imdbApiRequestData);
-      return OBJECT_MAPPER.readValue(response, OverviewDetails.class);
+      return objectMapper.readValue(response, OverviewDetails.class);
     } catch (URISyntaxException | IOException e) {
       if (log.isErrorEnabled()) {
-        log.error("Exception while executing get overview details with tconst {}.", tconst, e);
+        log.error("Exception while executing get overview details with ttConst {}.", ttConst, e);
       }
 
       return null;

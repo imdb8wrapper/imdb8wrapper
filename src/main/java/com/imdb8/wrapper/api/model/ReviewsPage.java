@@ -11,13 +11,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Title {
-  private String id;
-  private Image image;
-  private int runningTimeInMinutes;
-  private String title;
-  private String titleType;
-  private int year;
-  private List<Principal> principals;
-  private String ttConst;
+public class ReviewsPage {
+  private String paginationKey;
+
+  private List<Review> reviews;
+
 }

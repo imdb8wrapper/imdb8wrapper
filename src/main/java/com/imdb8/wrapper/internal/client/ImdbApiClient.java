@@ -13,13 +13,13 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import static com.imdb8.wrapper.internal.ApiConstants.IMDB8_API_BASE;
+import static com.imdb8.wrapper.internal.ApiConstants.IMDB8_API_KEY_HEADER;
+import static com.imdb8.wrapper.internal.ApiConstants.IMDB8_HOST_HEADER;
+import static com.imdb8.wrapper.internal.ApiConstants.IMDB8_HOST_VALUE;
+
 @Slf4j
 public class ImdbApiClient {
-  private static final String IMDB8_API_BASE = "https://imdb8.p.rapidapi.com";
-  private static final String IMDB8_API_KEY_HEADER = "x-rapidapi-key";
-  private static final String IMDB8_HOST_HEADER = "x-rapidapi-host";
-  private static final String IMDB8_HOST_VALUE = "imdb8.p.rapidapi.com";
-
   private final HttpGet httpGet;
 
   private final CloseableHttpClient httpClient;
