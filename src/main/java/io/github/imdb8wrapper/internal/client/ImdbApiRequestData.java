@@ -1,4 +1,4 @@
-package com.imdb8.wrapper.internal.client;
+package io.github.imdb8wrapper.internal.client;
 
 import lombok.Getter;
 import org.apache.http.NameValuePair;

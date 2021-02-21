@@ -1,4 +1,4 @@
-package com.imdb8.wrapper.api.model;
+package io.github.imdb8wrapper.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;

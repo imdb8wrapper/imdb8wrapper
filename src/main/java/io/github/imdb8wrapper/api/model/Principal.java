@@ -1,4 +1,4 @@
-package com.imdb8.wrapper.api.model;
+package io.github.imdb8wrapper.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -11,9 +11,12 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ReviewsPage {
-  private String paginationKey;
-
-  private List<Review> reviews;
-
+public class Principal {
+  private String disambiguation;
+  private String id;
+  private String legacyNameText;
+  private String name;
+  private int billing;
+  private String category;
+  private List<String> characters;
 }

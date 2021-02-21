@@ -1,4 +1,4 @@
-package com.imdb8.wrapper.internal.client;
+package io.github.imdb8wrapper.internal.client;
 
 
 import lombok.extern.slf4j.Slf4j;
@@ -13,10 +13,10 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import static com.imdb8.wrapper.internal.ApiConstants.IMDB8_API_BASE;
-import static com.imdb8.wrapper.internal.ApiConstants.IMDB8_API_KEY_HEADER;
-import static com.imdb8.wrapper.internal.ApiConstants.IMDB8_HOST_HEADER;
-import static com.imdb8.wrapper.internal.ApiConstants.IMDB8_HOST_VALUE;
+import static io.github.imdb8wrapper.internal.ApiConstants.IMDB8_API_BASE;
+import static io.github.imdb8wrapper.internal.ApiConstants.IMDB8_API_KEY_HEADER;
+import static io.github.imdb8wrapper.internal.ApiConstants.IMDB8_HOST_HEADER;
+import static io.github.imdb8wrapper.internal.ApiConstants.IMDB8_HOST_VALUE;
 
 @Slf4j
 public class ImdbApiClient {

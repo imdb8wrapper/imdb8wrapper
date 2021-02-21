@@ -1,6 +1,6 @@
-package com.imdb8.wrapper.api.model.request;
+package io.github.imdb8wrapper.api.model.request;
 
-import com.imdb8.wrapper.api.model.ReviewsPage;
+import io.github.imdb8wrapper.api.model.ReviewsPage;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.imdb8.wrapper.api.model;
+package io.github.imdb8wrapper.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -11,12 +11,13 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Principal {
-  private String disambiguation;
+public class Title {
   private String id;
-  private String legacyNameText;
-  private String name;
-  private int billing;
-  private String category;
-  private List<String> characters;
+  private Image image;
+  private int runningTimeInMinutes;
+  private String title;
+  private String titleType;
+  private int year;
+  private List<Principal> principals;
+  private String ttConst;
 }

@@ -1,16 +1,14 @@
-package com.imdb8.wrapper.internal.request;
+package io.github.imdb8wrapper.internal.request;
 
-import com.imdb8.wrapper.api.model.OverviewDetails;
-import com.imdb8.wrapper.api.model.request.GetOverviewDetailsRequest;
-import com.imdb8.wrapper.internal.client.ImdbApiClient;
-import com.imdb8.wrapper.internal.client.ImdbApiRequestData;
+import io.github.imdb8wrapper.api.model.OverviewDetails;
+import io.github.imdb8wrapper.api.model.request.GetOverviewDetailsRequest;
+import io.github.imdb8wrapper.internal.ApiConstants;
+import io.github.imdb8wrapper.internal.client.ImdbApiClient;
+import io.github.imdb8wrapper.internal.client.ImdbApiRequestData;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-
-import static com.imdb8.wrapper.internal.ApiConstants.GET_OVERVIEW_DETAILS;
-import static com.imdb8.wrapper.internal.ApiConstants.TT_CONST_PARAM_NAME;
 
 @Slf4j
 public class GetOverviewDetailsRequestImpl extends AbstractRequest implements GetOverviewDetailsRequest {
@@ -20,8 +18,8 @@ public class GetOverviewDetailsRequestImpl extends AbstractRequest implements Ge
 
   public OverviewDetails execute(String ttConst) {
     ImdbApiRequestData imdbApiRequestData = ImdbApiRequestData.builder()
-        .path(GET_OVERVIEW_DETAILS)
-        .addQueryParameter(TT_CONST_PARAM_NAME, ttConst)
+        .path(ApiConstants.GET_OVERVIEW_DETAILS)
+        .addQueryParameter(ApiConstants.TT_CONST_PARAM_NAME, ttConst)
         .build();
 
     try {

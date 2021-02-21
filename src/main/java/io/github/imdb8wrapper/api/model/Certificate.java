@@ -1,4 +1,4 @@
-package com.imdb8.wrapper.api.model;
+package io.github.imdb8wrapper.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -9,7 +9,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Author {
-  private String displayName;
-  private String userId;
+public class Certificate {
+  private String certificate;
+  private int certificateNumber;
+  private String ratingReason;
+  private String ratingsBody;
 }

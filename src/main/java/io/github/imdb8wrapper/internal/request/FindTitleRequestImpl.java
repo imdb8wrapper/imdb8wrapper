@@ -1,11 +1,11 @@
-package com.imdb8.wrapper.internal.request;
+package io.github.imdb8wrapper.internal.request;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
-import com.imdb8.wrapper.api.model.Title;
-import com.imdb8.wrapper.api.model.request.FindTitleRequest;
-import com.imdb8.wrapper.internal.client.ImdbApiClient;
-import com.imdb8.wrapper.internal.client.ImdbApiRequestData;
+import io.github.imdb8wrapper.api.model.Title;
+import io.github.imdb8wrapper.api.model.request.FindTitleRequest;
+import io.github.imdb8wrapper.internal.client.ImdbApiClient;
+import io.github.imdb8wrapper.internal.client.ImdbApiRequestData;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
@@ -13,8 +13,8 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.imdb8.wrapper.internal.ApiConstants.FIND_TITLE;
-import static com.imdb8.wrapper.internal.ApiConstants.QUERY_PARAM_NAME;
+import static io.github.imdb8wrapper.internal.ApiConstants.FIND_TITLE;
+import static io.github.imdb8wrapper.internal.ApiConstants.QUERY_PARAM_NAME;
 
 @Slf4j
 public class FindTitleRequestImpl extends AbstractRequest implements FindTitleRequest {

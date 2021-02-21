@@ -1,9 +1,9 @@
-package com.imdb8.wrapper.internal.request;
+package io.github.imdb8wrapper.internal.request;
 
-import com.imdb8.wrapper.api.model.ReviewsPage;
-import com.imdb8.wrapper.api.model.request.GetUserReviewsRequest;
-import com.imdb8.wrapper.internal.client.ImdbApiClient;
-import com.imdb8.wrapper.internal.client.ImdbApiRequestData;
+import io.github.imdb8wrapper.api.model.request.GetUserReviewsRequest;
+import io.github.imdb8wrapper.api.model.ReviewsPage;
+import io.github.imdb8wrapper.internal.client.ImdbApiClient;
+import io.github.imdb8wrapper.internal.client.ImdbApiRequestData;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
@@ -11,9 +11,9 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.imdb8.wrapper.internal.ApiConstants.GET_USER_REVIEWS;
-import static com.imdb8.wrapper.internal.ApiConstants.PAGINATION_KEY_PARAM_NAME;
-import static com.imdb8.wrapper.internal.ApiConstants.TT_CONST_PARAM_NAME;
+import static io.github.imdb8wrapper.internal.ApiConstants.GET_USER_REVIEWS;
+import static io.github.imdb8wrapper.internal.ApiConstants.PAGINATION_KEY_PARAM_NAME;
+import static io.github.imdb8wrapper.internal.ApiConstants.TT_CONST_PARAM_NAME;
 
 @Slf4j
 public class GetUserReviewsRequestImpl extends AbstractRequest implements GetUserReviewsRequest {
