@@ -1,11 +1,11 @@
 package io.github.imdb8wrapper.api;
 
-import io.github.imdb8wrapper.api.model.request.GetUserReviewsRequest;
+import io.github.imdb8wrapper.api.request.GetUserReviewsRequest;
 import io.github.imdb8wrapper.internal.client.ImdbApiClient;
 import io.github.imdb8wrapper.internal.request.FindTitleRequestImpl;
 import io.github.imdb8wrapper.internal.request.GetUserReviewsRequestImpl;
-import io.github.imdb8wrapper.api.model.request.FindTitleRequest;
-import io.github.imdb8wrapper.api.model.request.GetOverviewDetailsRequest;
+import io.github.imdb8wrapper.api.request.FindTitleRequest;
+import io.github.imdb8wrapper.api.request.GetOverviewDetailsRequest;
 import io.github.imdb8wrapper.internal.request.GetOverviewDetailsRequestImpl;
 
 /**

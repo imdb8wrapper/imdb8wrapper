@@ -3,7 +3,7 @@ package io.github.imdb8wrapper.internal.request;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import io.github.imdb8wrapper.api.model.Title;
-import io.github.imdb8wrapper.api.model.request.FindTitleRequest;
+import io.github.imdb8wrapper.api.request.FindTitleRequest;
 import io.github.imdb8wrapper.internal.client.ImdbApiClient;
 import io.github.imdb8wrapper.internal.client.ImdbApiRequestData;
 import lombok.extern.slf4j.Slf4j;

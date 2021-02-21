@@ -1,6 +1,6 @@
 package io.github.imdb8wrapper.internal.request;
 
-import io.github.imdb8wrapper.api.model.request.GetUserReviewsRequest;
+import io.github.imdb8wrapper.api.request.GetUserReviewsRequest;
 import io.github.imdb8wrapper.api.model.ReviewsPage;
 import io.github.imdb8wrapper.internal.client.ImdbApiClient;
 import io.github.imdb8wrapper.internal.client.ImdbApiRequestData;

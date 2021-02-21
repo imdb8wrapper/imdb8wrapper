@@ -1,4 +1,4 @@
-package io.github.imdb8wrapper.api.model.request;
+package io.github.imdb8wrapper.api.request;
 
 import io.github.imdb8wrapper.api.model.OverviewDetails;
 

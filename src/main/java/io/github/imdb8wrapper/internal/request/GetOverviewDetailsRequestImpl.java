@@ -1,7 +1,7 @@
 package io.github.imdb8wrapper.internal.request;
 
 import io.github.imdb8wrapper.api.model.OverviewDetails;
-import io.github.imdb8wrapper.api.model.request.GetOverviewDetailsRequest;
+import io.github.imdb8wrapper.api.request.GetOverviewDetailsRequest;
 import io.github.imdb8wrapper.internal.ApiConstants;
 import io.github.imdb8wrapper.internal.client.ImdbApiClient;
 import io.github.imdb8wrapper.internal.client.ImdbApiRequestData;
