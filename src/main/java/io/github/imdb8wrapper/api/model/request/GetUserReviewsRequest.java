@@ -9,5 +9,5 @@ public interface GetUserReviewsRequest {
 
   ReviewsPage getReviewsPage(String ttConst, String paginationKey);
 
-  List<ReviewsPage> getAllReviews(String ttConst);
+  List<ReviewsPage> getAllReviewsPages(String ttConst);
 }

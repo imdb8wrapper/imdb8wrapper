@@ -39,11 +39,6 @@ public class GetUserReviewsRequestImpl extends AbstractRequest implements GetUse
     }
   }
 
-  private ReviewsPage getReviewsPage(ImdbApiRequestData imdbApiRequestData) throws IOException, URISyntaxException {
-    String response = imdbApiClient.get(imdbApiRequestData);
-    return objectMapper.readValue(response, ReviewsPage.class);
-  }
-
   @Override
   public ReviewsPage getReviewsPage(String ttConst, String paginationKey) {
     ImdbApiRequestData imdbApiRequestData = ImdbApiRequestData.builder()
@@ -63,7 +58,7 @@ public class GetUserReviewsRequestImpl extends AbstractRequest implements GetUse
   }
 
   @Override
-  public List<ReviewsPage> getAllReviews(String ttConst) {
+  public List<ReviewsPage> getAllReviewsPages(String ttConst) {
     ReviewsPage reviewsPage = getFirstReviewsPage(ttConst);
 
     List<ReviewsPage> reviews = new ArrayList<>();
@@ -75,5 +70,10 @@ public class GetUserReviewsRequestImpl extends AbstractRequest implements GetUse
     }
 
     return reviews;
+  }
+
+  private ReviewsPage getReviewsPage(ImdbApiRequestData imdbApiRequestData) throws IOException, URISyntaxException {
+    String response = imdbApiClient.get(imdbApiRequestData);
+    return objectMapper.readValue(response, ReviewsPage.class);
   }
 }
