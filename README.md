@@ -15,14 +15,17 @@ public class DemoApplication {
     ImdbApi imdbApi = new ImdbApi(apiKey);
 
     FindTitleRequest findTitleRequest = imdbApi.newFindTitleRequest();
-    
+
     List<Title> titles = findTitleRequest.execute("Honest Thief");
-    
+
     Title title = titles.get(0);
 
     GetOverviewDetailsRequest getOverviewDetailsRequest = imdbApi.newGetOverviewDetailsRequest();
 
-    OverviewDetails overviewDetails = getOverviewDetailsRequest.execute(title.getId());
+    OverviewDetails overviewDetails = getOverviewDetailsRequest.execute(title.getTtConst());
+
+    GetUserReviewsRequest getUserReviewsRequest = imdbApi.newGetUserReviewsRequest();
+    ReviewsPage reviewsPage = getUserReviewsRequest.getFirstReviewsPage(title.getTtConst());
   }
 }
 ```
