@@ -47,10 +47,10 @@ public class FindTitleRequestImpl implements FindTitleRequest {
           .collect(Collectors.toList());
 
       for (Title title : titles) {
-        String id = title.getId();
-        id = id.replace(TITLE_PREFIX, "");
-        id = id.substring(0, id.length() - 1);
-        title.setId(id);
+        String ttConst = title.getId();
+        ttConst = ttConst.replace(TITLE_PREFIX, "");
+        ttConst = ttConst.substring(0, ttConst.length() - 1);
+        title.setTtConst(ttConst);
       }
 
       return titles;
