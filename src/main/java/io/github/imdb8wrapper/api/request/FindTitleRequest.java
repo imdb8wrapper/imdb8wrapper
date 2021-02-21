@@ -12,6 +12,8 @@ import java.util.List;
 public interface FindTitleRequest {
   /**
    * execute performs the find title request and retrieves the found movie titles.
+   * <p>
+   * Note that only movie title results are returned.
    *
    * @param query the search query
    * @return a list of movie titles found with the search query
