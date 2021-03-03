@@ -31,7 +31,7 @@ public class OverviewDetails {
   private String plotSummaryText;
 
   @JsonProperty("ratings")
-  public void setRatingAndRatingCount(Map<String, Object> ratings) {
+  public void unpackRatings(Map<String, Object> ratings) {
     Object object = ratings.get("rating");
 
     if (object instanceof Integer) {
@@ -46,12 +46,12 @@ public class OverviewDetails {
   }
 
   @JsonProperty("plotOutline")
-  public void setPlotOutlineText(Map<String, String> plotOutline) {
+  public void unpackPlotOutline(Map<String, String> plotOutline) {
     this.plotOutlineText = plotOutline.get("text");
   }
 
   @JsonProperty("plotSummary")
-  public void setPlotSummaryText(Map<String, String> plotSummary) {
+  public void unpackPlotSummary(Map<String, String> plotSummary) {
     this.plotSummaryText = plotSummary.get("text");
   }
 }
