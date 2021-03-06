@@ -6,11 +6,11 @@
 
     <groupId>io.github.imdb8wrapper</groupId>
     <artifactId>imdb8wrapper</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>imdb8wrapper</name>
-    <description>A java wrapper of imdb8 API</description>
+    <description>A Java wrapper of IMDB8 API</description>
     <url>https://imdb8wrapper.github.io/imdb8wrapper</url>
 
     <licenses>
