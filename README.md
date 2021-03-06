@@ -7,7 +7,7 @@ To use it, you need the following Maven dependency:
 <dependency>
   <groupId>io.github.imdb8wrapper</groupId>
   <artifactId>imdb8wrapper</artifactId>
-  <version>1.0.0</version>
+  <version>${project.version}</version>
 </dependency>
 ```
 
