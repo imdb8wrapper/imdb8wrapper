@@ -32,30 +32,28 @@ public class FindTitleRequestImpl extends AbstractRequest implements FindTitleRe
         .build();
 
     try {
-      String response = imdbApiClient.get(imdbApiRequestData);
-
-      JsonNode resultsNode = objectMapper.readTree(response).path(RESULTS);
-      List<Title> titles = objectMapper.readerFor(new TypeReference<List<Title>>() {
-      }).readValue(resultsNode);
-
-      titles = titles.stream()
-          .filter(title -> title.getId().startsWith(TITLE_PREFIX))
-          .collect(Collectors.toList());
-
-      for (Title title : titles) {
-        String ttConst = title.getId();
-        ttConst = ttConst.replace(TITLE_PREFIX, "");
-        ttConst = ttConst.substring(0, ttConst.length() - 1);
-        title.setTtConst(ttConst);
-      }
-
-      return titles;
+      return getMovieTitles(imdbApiRequestData);
     } catch (URISyntaxException | IOException e) {
-      if (log.isErrorEnabled()) {
-        log.error("Exception while executing find with query {}.", query, e);
-      }
-
+      log.error("Exception while executing find with query {}.", query, e);
       return null;
     }
+  }
+
+  private List<Title> getMovieTitles(ImdbApiRequestData imdbApiRequestData) throws IOException, URISyntaxException {
+    String response = imdbApiClient.get(imdbApiRequestData);
+
+    JsonNode resultsNode = objectMapper.readTree(response).path(RESULTS);
+    List<Title> titles = objectMapper.readerFor(new TypeReference<List<Title>>() {
+    }).readValue(resultsNode);
+
+    return titles.stream()
+        .filter(title -> title.getId().startsWith(TITLE_PREFIX))
+        .peek(title -> {
+          String ttConst = title.getId();
+          ttConst = ttConst.replace(TITLE_PREFIX, "");
+          ttConst = ttConst.substring(0, ttConst.length() - 1);
+          title.setTtConst(ttConst);
+        })
+        .collect(Collectors.toList());
   }
 }

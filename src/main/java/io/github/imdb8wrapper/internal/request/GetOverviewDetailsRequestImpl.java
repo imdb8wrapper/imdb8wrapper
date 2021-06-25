@@ -23,14 +23,15 @@ public class GetOverviewDetailsRequestImpl extends AbstractRequest implements Ge
         .build();
 
     try {
-      String response = imdbApiClient.get(imdbApiRequestData);
-      return objectMapper.readValue(response, OverviewDetails.class);
+      return getOverviewDetails(imdbApiRequestData);
     } catch (URISyntaxException | IOException e) {
-      if (log.isErrorEnabled()) {
-        log.error("Exception while executing get overview details with ttConst {}.", ttConst, e);
-      }
-
+      log.error("Exception while executing get overview details with ttConst {}.", ttConst, e);
       return null;
     }
+  }
+
+  private OverviewDetails getOverviewDetails(ImdbApiRequestData imdbApiRequestData) throws IOException, URISyntaxException {
+    String response = imdbApiClient.get(imdbApiRequestData);
+    return objectMapper.readValue(response, OverviewDetails.class);
   }
 }

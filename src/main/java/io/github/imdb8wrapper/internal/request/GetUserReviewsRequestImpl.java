@@ -31,12 +31,14 @@ public class GetUserReviewsRequestImpl extends AbstractRequest implements GetUse
     try {
       return getReviewsPage(imdbApiRequestData);
     } catch (IOException | URISyntaxException e) {
-      if (log.isErrorEnabled()) {
-        log.error("Exception while executing get user reviews with ttConst {}.", ttConst, e);
-      }
-
+      log.error("Exception while executing get user reviews with ttConst {}.", ttConst, e);
       return null;
     }
+  }
+
+  private ReviewsPage getReviewsPage(ImdbApiRequestData imdbApiRequestData) throws IOException, URISyntaxException {
+    String response = imdbApiClient.get(imdbApiRequestData);
+    return objectMapper.readValue(response, ReviewsPage.class);
   }
 
   @Override
@@ -46,13 +48,11 @@ public class GetUserReviewsRequestImpl extends AbstractRequest implements GetUse
         .addQueryParameter(TT_CONST_PARAM_NAME, ttConst)
         .addQueryParameter(PAGINATION_KEY_PARAM_NAME, paginationKey)
         .build();
+
     try {
       return getReviewsPage(imdbApiRequestData);
     } catch (IOException | URISyntaxException e) {
-      if (log.isErrorEnabled()) {
-        log.error("Exception while executing get user reviews with ttConst {} and paginationKey {}.", ttConst, paginationKey, e);
-      }
-
+      log.error("Exception while executing get user reviews with ttConst {} and paginationKey {}.", ttConst, paginationKey, e);
       return null;
     }
   }
@@ -70,10 +70,5 @@ public class GetUserReviewsRequestImpl extends AbstractRequest implements GetUse
     }
 
     return reviews;
-  }
-
-  private ReviewsPage getReviewsPage(ImdbApiRequestData imdbApiRequestData) throws IOException, URISyntaxException {
-    String response = imdbApiClient.get(imdbApiRequestData);
-    return objectMapper.readValue(response, ReviewsPage.class);
   }
 }

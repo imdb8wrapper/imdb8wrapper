@@ -22,7 +22,6 @@ public class ImdbApiRequestData {
     return new Builder();
   }
 
-
   public static class Builder {
     private final StringBuilder pathBuilder;
 
